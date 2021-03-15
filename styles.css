@@ -1,0 +1,111 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  #mainNav {
+    transition: margin-left .5s;
+    padding: 16px;
+    display: inline-block;
+  }
+
+  #mainNav > span{
+      float: left;
+      padding-right: .5em;
+  }
+
+  #mainNav > h2 {
+      float: right;
+      margin-top: 4.4px;
+      font-size: 30px
+  }
+
+ #projectDescription {
+      border: 3px;
+      border-color: black;
+      border-style: solid;
+      height: auto;
+      width: 950px;
+      font-size: 25px;
+      margin: 100px auto 0px auto;  
+  }
+
+  #projectDescription > p {
+      padding: 0em 1em 0em 1em;
+  }
+
+  #projecDescription > p:nth-child(2) {
+      padding-bottom: 2em;
+  }
+
+  .container {
+    text-align: center;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    height: auto;
+    width: 165px;
+    font-size: 20px;
+    margin: 100px auto 100px auto;
+    transition: all .2s ease-in-out;
+  }
+
+  .container:hover {
+      transform: scale(1.2);
+      box-shadow: 0 1px 2px 0 black;
+  }
+
+  .container > p {
+      padding: 1px;
+      margin: 1px;
+  }
+
+  #form {
+      margin: 0;
+      padding: 1em;
+      background: #ecf1f4;
+      border: 3px;
+      border-style: solid;
+      border-color: black;
+      width: 250px;
+      margin: auto;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
