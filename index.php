@@ -66,7 +66,7 @@ function closeNav() {
 
 <?php
 
-require_once 'connect.php';
+require_once 'C:\xampp\htdocs\Portfolio\connect.php';
 $sql = "SELECT * FROM goals";
 $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
