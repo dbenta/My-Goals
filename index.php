@@ -82,13 +82,13 @@ while($row = mysqli_fetch_array($result)){
       $cat = "Other";
     }
     echo "<div class='goal'>";
-    echo "<a href='complete.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
+    echo "<a href='insert_goal.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
     echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
     echo "</div>";
   }
 }
 
-print ("<h2>Incomplete Goals</h2>");
+print ("<h2>In Progress Goals</h2>");
 //In Progress Goals
 while($row = mysqli_fetch_array($result)){
   if($row['goal_progress' == 1]) {
@@ -100,7 +100,7 @@ while($row = mysqli_fetch_array($result)){
       $cat = "Other";
     }
     echo "<div class='goal'>";
-    echo "<a href='complete.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
+    echo "<a href='inprogress.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
     echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
     echo "</div>";
   }
@@ -119,7 +119,7 @@ while($row = mysqli_fetch_array($result)){
       $cat = "Other";
     }
     echo "<div class='goal'>";
-    echo "<a href='delete.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
+    echo "<a href='delete_goal.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
     echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
     echo "</div>";
   }
