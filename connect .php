@@ -1,19 +1,15 @@
 <?php>
 
-$user = 'root';
+$servername = 'localhost';
+$username = 'root';
 $password = 'root';
 $db = 'goals';
-$host = 'localhost';
 $port = 8889;
 
-$link = mysql_init();
-$success = mysql_real_connect(
-    $link,
-    $host,
-    $user,
-    $password,
-    $db,
-    $port
-);
+$conn = new mysqli($servername, $username, $password, $db);
+if ($conn->connect_error) {
+    die("Connection Failed: " . $conn->connect_error);
+}
+
 
 ?>
