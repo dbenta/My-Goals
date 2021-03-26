@@ -24,8 +24,9 @@ function closeNav() {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">About</a>
-  <a href="#">Completed Goals</a>
   <a href="#">New Goals</a>
+  <a href="#">In Progress Goals</a>
+  <a href="#">Completed Goals</a>
   <a href="#">Contact</a>
 </div>
 
