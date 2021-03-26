@@ -36,7 +36,7 @@ function closeNav() {
 
 <div id ="projectDescription">
 <p>Hello, my project is a personal goal database.  I will use a form to update the database 
-    and have the updated database populate areas that are Complete, In Progress, or Not Started.</p>
+    and have the updated database populate areas that are New, In Progress, or Complete.</p>
 
 <p>When the information populates those areas, there will be additional information such as 
     the date and time the goal was completed, problems that I had with the goal and the solutions that I came up with.</p>
