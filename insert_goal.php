@@ -1,6 +1,11 @@
 <?php
 
-include 'connect.php';
+$mysqli = new mysqli('localhost', 'root', 'password', 'goals');
+
+if (mysqli_connect_errno()) {
+    printf("Connection failed: %s\n", mysqli_connect_errno());
+    exit();
+}
 
 if (isset($_POST['submit'])) {
 
@@ -11,7 +16,7 @@ if (isset($_POST['submit'])) {
     $progress = $_POST['progress'];
 
     $query = "INSERT INTO goals (goal_category, goal_text, goal_date, goal_progress) VALUES ('$category', '$text', '$date', '$progress')";
-    
+
     if($mysqli->query($query) === true){
         print ("Stored");
     } else {
