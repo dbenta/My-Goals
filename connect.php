@@ -1,15 +1,12 @@
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$db = 'goals';
+$mysqli = new mysqli('localhost', 'root', 'password', 'goals');
 
-$conn = new mysqli('localhost', 'root', 'password', 'goals');
-if ($conn->connect_error) {
-    die("Connection Failed: " . $conn->connect_error);
+if (mysqli_connect_errno()) {
+    printf("Connection failed: %s\n", mysqli_connect_errno());
+    exit();
 }
 
-mysqli_select_db($conn, $goals);
+$msqli->select_db('goals');
 
 ?>

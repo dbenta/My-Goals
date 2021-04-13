@@ -71,7 +71,7 @@ body {background-image: url('pexels-johannes-plenio-1103970.jpg');}
 <br><label for="goaldate">Date</label>
 <br><input type="date" name="goaldate"/>
 <br><label for="complete">Complete Goal</label>
-<input type="checkbox" name="complete" value="1" /><br/>
+<input type="checkbox" name="complete"/><br/>
 <button type="submit">Upload Goal</button>
 </form>
 </div>
