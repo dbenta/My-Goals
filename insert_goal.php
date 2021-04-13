@@ -1,8 +1,13 @@
 <?php
 
-require_once 'connect.php';
+include 'connect.php';
 
-$query = "INSERT INTO goals (goal_category, goal_text, goal_date, goal_progress) VALUES ('$_POST[category]', '$_POST[text]', '$_POST[date]', '$_POST[progress]')";
+$category = $_POST['category'];
+$text = $_POST['text'];
+$date = $_POST['date'];
+$progress = $_POST['progress'];
+
+$query = "INSERT INTO goals (goal_category, goal_text, goal_date, goal_progress) VALUES ('$category', '$text', '$date', '$progress')";
 
 if($mysqli->query($query) === true){
     print ("Stored");
