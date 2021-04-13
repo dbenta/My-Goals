@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\xampp\htdocs\Portfolio\connect.php';
+require_once 'connect.php';
 
 $category = $_REQUEST['cat'];
 $text = $_REQUEST['text'];
