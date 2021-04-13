@@ -1,4 +1,67 @@
-<!DOCTYPE html>
+<?php
+
+include 'connect.php';
+
+
+$sql = "SELECT * FROM goals";
+$result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+print ("<h2>Goal List</h2>");
+//New Goals
+while($row = mysqli_fetch_array($result)){
+  if($row['goal_progress' == 0]) {
+    if($row['goal_category'] == 0) {
+      $cat = "Personal";
+    } elseif ($row['goal_category'] == 1) {
+      $cat = "Professional";
+    } else {
+      $cat = "Other";
+    }
+    echo "<div class='goal'>";
+    echo "<a href='insert_goal.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
+    echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
+    echo "</div>";
+  }
+}
+
+print ("<h2>In Progress Goals</h2>");
+//In Progress Goals
+while($row = mysqli_fetch_array($result)){
+  if($row['goal_progress' == 1]) {
+    if($row['goal_category'] == 0) {
+      $cat = "Personal";
+    } elseif ($row['goal_category'] == 1) {
+      $cat = "Professional";
+    } else {
+      $cat = "Other";
+    }
+    echo "<div class='goal'>";
+    echo "<a href='inprogress.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
+    echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
+    echo "</div>";
+  }
+}
+
+//Complete Goals
+print ("<h2>Complete Goals</h2>");
+$result = mysqli_query($link, $sql) or die(mysqli_error($link));
+while($row = mysqli_fetch_array($result)){
+  if($row['goal_progress' == 2]) {
+    if($row['goal_category'] == 0) {
+      $cat = "Personal";
+    } elseif ($row['goal_category'] == 1) {
+      $cat = "Professional";
+    } else {
+      $cat = "Other";
+    }
+    echo "<div class='goal'>";
+    echo "<a href='delete_goal.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
+    echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
+    echo "</div>";
+  }
+}
+?>
+
 <html>
     <title>Goal Tracker</title> 
 
@@ -64,70 +127,6 @@ function closeNav() {
 <button type="submit">Upload Goal</button>
 </form>
 </div>
-
-<?php
-
-include 'connect.php';
-
-
-$sql = "SELECT * FROM goals";
-$result = mysqli_query($link, $sql) or die(mysqli_error($link));
-
-print ("<h2>Goal List</h2>");
-//New Goals
-while($row = mysqli_fetch_array($result)){
-  if($row['goal_progress' == 0]) {
-    if($row['goal_category'] == 0) {
-      $cat = "Personal";
-    } elseif ($row['goal_category'] == 1) {
-      $cat = "Professional";
-    } else {
-      $cat = "Other";
-    }
-    echo "<div class='goal'>";
-    echo "<a href='insert_goal.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
-    echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
-    echo "</div>";
-  }
-}
-
-print ("<h2>In Progress Goals</h2>");
-//In Progress Goals
-while($row = mysqli_fetch_array($result)){
-  if($row['goal_progress' == 1]) {
-    if($row['goal_category'] == 0) {
-      $cat = "Personal";
-    } elseif ($row['goal_category'] == 1) {
-      $cat = "Professional";
-    } else {
-      $cat = "Other";
-    }
-    echo "<div class='goal'>";
-    echo "<a href='inprogress.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
-    echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
-    echo "</div>";
-  }
-}
-
-//Complete Goals
-print ("<h2>Complete Goals</h2>");
-$result = mysqli_query($link, $sql) or die(mysqli_error($link));
-while($row = mysqli_fetch_array($result)){
-  if($row['goal_progress' == 2]) {
-    if($row['goal_category'] == 0) {
-      $cat = "Personal";
-    } elseif ($row['goal_category'] == 1) {
-      $cat = "Professional";
-    } else {
-      $cat = "Other";
-    }
-    echo "<div class='goal'>";
-    echo "<a href='delete_goal.php?id=" . $row['goal_id'] . "'><button class ='btnComplete'>Complete</button></a><stronmg>";
-    echo $cat . "</strong><p>" . $row['goal_text'] . "</p>Goal Date: " . $row['goal_date'];
-    echo "</div>";
-  }
-}
-?>
 
         
     </body>
