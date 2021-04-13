@@ -11,6 +11,12 @@ if (isset($_POST['submit'])) {
     $progress = $_POST['progress'];
 
     $query = "INSERT INTO goals (goal_category, goal_text, goal_date, goal_progress) VALUES ('$category', '$text', '$date', '$progress')";
+    
+    if($mysqli->query($query) === true){
+        print ("Stored");
+    } else {
+        print ("Failed");
+    }
 
 
     }
@@ -20,10 +26,6 @@ if (isset($_POST['submit'])) {
 
 }
 
-if($mysqli->query($query) === true){
-    print ("Stored");
-} else {
-    print ("Failed");
-}
+
 
 ?>
