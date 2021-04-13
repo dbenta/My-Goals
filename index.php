@@ -71,17 +71,7 @@ while($row = mysqli_fetch_array($result)){
 body {background-image: url('pexels-johannes-plenio-1103970.jpg');}
 </style>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("mainNav").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("mainNav").style.marginLeft= "0";
-}
-</script>
+<script src="indexscript.js"></script>
 
 <body>
 
