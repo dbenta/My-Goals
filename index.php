@@ -63,6 +63,7 @@ while($row = mysqli_fetch_array($result)){
 }
 ?>
 
+<!DOCTYPE html>
 <html>
     <title>Goal Tracker</title> 
 
