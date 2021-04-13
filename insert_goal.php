@@ -2,12 +2,23 @@
 
 include 'connect.php';
 
-$category = $_POST['category'];
-$text = $_POST['text'];
-$date = $_POST['date'];
-$progress = $_POST['progress'];
+if (isset($_POST['submit'])) {
 
-$query = "INSERT INTO goals (goal_category, goal_text, goal_date, goal_progress) VALUES ('$category', '$text', '$date', '$progress')";
+    if(!empty($_POST['name']) && !empty($_POST['text']) && !empty($_POST['date']) && !empty($_POST['progress'])) {
+    $category = $_POST['category'];
+    $text = $_POST['text'];
+    $date = $_POST['date'];
+    $progress = $_POST['progress'];
+
+    $query = "INSERT INTO goals (goal_category, goal_text, goal_date, goal_progress) VALUES ('$category', '$text', '$date', '$progress')";
+
+
+    }
+    else {
+        echo "All fields are required";
+    }
+
+}
 
 if($mysqli->query($query) === true){
     print ("Stored");
