@@ -7,6 +7,5 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$msqli->select_db('goals');
 
 ?>
