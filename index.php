@@ -66,12 +66,12 @@ body {background-image: url('pexels-johannes-plenio-1103970.jpg');}
     <option value="1">Professional</option>
     <option value="2">Other</option>
   </select>
-<br><label for="text">Goal</label>
+<br><label>Goal</label>
 <br><textarea name="text" ></textarea>
-<br><label for="goaldate">Date</label>
+<br><label>Date</label>
 <br><input type="date" name="goaldate"/>
-<br><label for="complete">Complete Goal</label>
-<input type="checkbox" name="complete"/><br/>
+<br><label>Complete Goal</label>
+<br><textarea type="text" name="complete"/></textarea><br/>
 <button type="submit" name="submit">Upload Goal</button>
 </form>
 </div>
