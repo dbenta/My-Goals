@@ -1,6 +1,7 @@
 <?php
 
 include 'connect.php';
+include 'insert_goal.php';
 
 
 $sql = "SELECT * FROM goals";
